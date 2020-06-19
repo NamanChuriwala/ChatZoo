@@ -1,0 +1,24 @@
+<head>
+    <style>
+	.testclass {
+	    color: blue;
+	}
+	.roomclass{
+	    color: red;
+	}
+    </style>
+    <h1 class="testclass">Welcome! Welcome!</h1>
+    <h2 class="testclass">Hey there!</h2>
+    {% for room in rooms %}
+    <p class="roomclass">{{ room }}</p>
+    {% endfor %}
+    <form id="message-box" >
+      Message: <input id="message" type="text" name="message">
+      <button id="submit" type="button">Send</button>
+    </form>
+    <div id="textbox">
+	"Display Messages Here!"
+    </div>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script id="script" data-username='{{ user }}' src="../static/socket.js"></script>
+</head>
